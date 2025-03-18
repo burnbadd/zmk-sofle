@@ -35,11 +35,11 @@
 
     behaviors {
         at: alt_tabber {
-            compatible = "zmk,layer-mod";
+            compatible = "zmk,mod-holder";
             label = "ALT_TABBER";
             #binding-cells = <1>;
             mods = <MOD_LALT>;
-            layers = <1>;  // Activate MOD_LALT only when Layer 1 is active
+            layers = <1>;
         };
     };
 
