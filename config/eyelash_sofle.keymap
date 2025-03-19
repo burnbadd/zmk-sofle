@@ -33,24 +33,40 @@
         tap-ms = <100>;
     };
 
-  behaviors {
-    swapper: swapper {
-      compatible = "zmk,behavior-tri-state";
-      #binding-cells = <0>;
-      bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+    behaviors {
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+        };
     };
-  };
+
+    macros {
+        sapphire_global: sapphire_global {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(G) &kp ENTER>;
+            label = "SAPPHIRE_GLOBAL";
+        };
+
+        sapphire_unglobal: sapphire_unglobal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(U) &kp ENTER>;
+            label = "SAPPHIRE_UNGLOBAL";
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
 
         layer0 {
             bindings = <
-&kp GRAVE      &kp N1     &kp N2        &kp N3        &kp N4       &kp N5         &kp UP_ARROW     &kp N6        &kp N7     &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB        &kp Q      &kp W         &kp E         &kp R        &kp T          &kp DOWN_ARROW   &kp Y         &kp U      &kp I      &kp O    &kp P     &kp LBKT
-&mt LCTRL ESC  &kp A      &kp S         &kp D         &kp F        &kp G          &kp LEFT_ARROW   &kp H         &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
-&kp LSHFT      &kp Z      &kp X         &kp C         &kp V        &kp B          &kp RIGHT_ARROW  &kp N         &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-&kp C_MUTE     &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 1 SPACE  &kp LCTRL    &kp ENTER        &kp FSLH      &kp ENTER  &trans     &trans   &trans
+&kp GRAVE      &kp N1   &kp N2        &kp N3        &kp N4       &kp N5                 &kp UP_ARROW     &kp N6    &kp N7     &kp N8     &kp N9            &kp N0              &kp RIGHT_BRACKET
+&kp TAB        &kp Q    &kp W         &kp E         &kp R        &kp T                  &kp DOWN_ARROW   &kp Y     &kp U      &kp I      &kp O             &kp P               &kp LBKT
+&mt LCTRL ESC  &kp A    &kp S         &kp D         &kp F        &kp G                  &kp LEFT_ARROW   &kp H     &kp J      &kp K      &kp L             &kp SEMI            &kp APOS
+&kp LSHFT      &kp Z    &kp X         &kp C         &kp V        &kp B                  &kp RIGHT_ARROW  &kp N     &kp M      &kp COMMA  &kp DOT           &kp EQUAL           &kp RSHFT
+&kp C_MUTE     &kp DOT  &kp LEFT_GUI  &kp LEFT_ALT  &lt 1 SPACE  &mt LCTRL LC(SPACE)    &kp ENTER        &kp FSLH  &kp ENTER  &kp MINUS  &sapphire_global  &sapphire_unglobal
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -61,7 +77,7 @@
             bindings = <
 &trans      &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8             &kp F9             &kp F10        &trans
 &trans      &trans           &trans          &msc SCRL_UP     &mkp MB4         &mkp MB5           &mmv MOVE_DOWN   &trans           &kp LC(PAGE_UP)  &kp LC(BACKSPACE)  &kp LC(PAGE_DOWN)  &kp BACKSPACE  &kp RIGHT_BRACKET
-&trans      &trans           &swapper       &msc SCRL_DOWN   &mkp LCLK        &mkp RCLK          &mmv MOVE_LEFT   &kp LEFT         &kp DOWN         &kp UP             &kp RIGHT          &kp ENTER      &trans
+&trans      &trans           &swapper        &msc SCRL_DOWN   &mkp LCLK        &mkp RCLK          &mmv MOVE_LEFT   &kp LEFT         &kp DOWN         &kp UP             &kp RIGHT          &kp ENTER      &trans
 &trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &trans             &trans             &trans         &trans
 &kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans             &trans             &trans
             >;
