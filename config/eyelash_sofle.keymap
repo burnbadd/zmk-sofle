@@ -66,6 +66,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        slash {
+            bindings = <&kp SLASH>;
+            key-positions = <8 9 10>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
