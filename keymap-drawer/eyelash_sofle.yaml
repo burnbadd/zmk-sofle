@@ -63,8 +63,8 @@ layers:
   - {t: /, h: '$$mdi:apple-keyboard-shift$$', s: '?'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '-', s: _}
-  - '&sapphire_global'
-  - '&sapphire_unglobal'
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   layer1:
   - {t: '$$mdi:transfer$$', type: trans}
   - F1
@@ -83,8 +83,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:pan-up$$
-  - '&mkp MB4'
-  - '&mkp MB5'
+  - {t: 'Ctl+$$mdi:backspace$$', type: backspace}
+  - '&sapphire_unglobal'
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - Ctl+PgUp
@@ -96,8 +96,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - '&swapper'
   - $$mdi:pan-down$$
-  - $$mdi:mouse-left-click-outline$$
-  - $$mdi:mouse-right-click-outline$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - '&sapphire_global'
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
@@ -131,5 +131,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
-- p: [8, 9, 10]
+- p: [9, 10]
   k: {t: /, s: '?'}
+- p: [34, 35, 36]
+  k: {t: '$$mdi:keyboard-return$$', type: enter}
