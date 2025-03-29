@@ -90,7 +90,7 @@ layers:
   - {t: '4', s: $}
   - {t: '5', s: '%'}
   - {t: '6', s: ^}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -198,5 +198,6 @@ layers:
 combos:
 - p: [9, 10]
   k: {t: /, s: '?'}
+  l: [LAYER0]
 - p: [34, 35, 36]
   k: {t: '$$mdi:keyboard-return$$', type: enter}
