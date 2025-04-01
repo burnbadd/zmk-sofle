@@ -60,7 +60,7 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: layer_2}
   - {t: 'Ctl+$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-control$$'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - $$mdi:apple-keyboard-shift$$
+  - {t: /, h: '$$mdi:apple-keyboard-shift$$', s: '?'}
   - {t: '$$mdi:keyboard-return$$', h: numpad}
   - {t: '-', s: _}
   - {t: ']', s: '}'}
@@ -199,5 +199,3 @@ combos:
 - p: [9, 10]
   k: {t: /, s: '?'}
   l: [LAYER0]
-- p: [34, 35, 36]
-  k: {t: '$$mdi:keyboard-return$$', type: enter}
